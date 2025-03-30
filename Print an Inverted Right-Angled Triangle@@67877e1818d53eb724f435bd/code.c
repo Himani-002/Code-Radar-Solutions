@@ -1,21 +1,16 @@
 #include <stdio.h>
+#include <string.h>
 
 int main() {
     int n;
-
-    // Input the number of rows
     scanf("%d", &n);
 
-    // Loop through each row
-    for (int i = n; i > 0; i--) {
-        // Loop through each column in the current row
-        for (int j = 0; j < i; j++) {
-            // Print a star
-            printf("*");
-        }
-        // Move to the next line
-        printf("\n");
-    }
+    char stars[n + 1]; // Array to hold the stars and null terminator
 
+    for (int i = n; i > 0; i--) {
+        memset(stars, '*', i); // Fill 'i' positions with '*'
+        stars[i] = '\0';        // Add null terminator to make it a string
+        printf("%s\n", stars);
+    }
     return 0;
 }
