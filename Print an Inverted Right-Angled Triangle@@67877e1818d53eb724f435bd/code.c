@@ -1,16 +1,20 @@
-// Your code here...
 #include <stdio.h>
 
 int main() {
-    int N;
-    scanf("%d", &N); // Read input value for N
+    int n;
 
-    // Loop to print the inverted right-angled triangle
-    for (int i = N; i >= 1; i--) {
-        for (int j = 1; j <= i; j++) {
+    // Input the number of rows
+    scanf("%d", &n);
+
+    // Loop through each row
+    for (int i = n; i > 0; i--) {
+        // Loop through each column in the current row
+        for (int j = 0; j < i; j++) {
+            // Print a star
             printf("*");
         }
-        printf("\n"); // Move to the next line after printing a row
+        // Move to the next line
+        printf("\n");
     }
 
     return 0;
